@@ -1,4 +1,4 @@
-module github.com/space55/wsdropin.git
+module github.com/space55/wsdropin
 
 go 1.14
 
