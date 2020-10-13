@@ -3,14 +3,13 @@ package wsdropin
 import (
 	"net"
 	"net/http"
-	"time"
 
 	"golang.org/x/net/websocket"
 )
 
 // Dial gives you a net.Conn that talks to a WS destination.
 // Addr should be like "ws://localhost:8080/"
-func Dial(addr string, timeout time.Duration) (net.Conn, error) {
+func Dial(addr string) (net.Conn, error) {
 	return websocket.Dial(addr, "", "http://localhost/")
 }
 
