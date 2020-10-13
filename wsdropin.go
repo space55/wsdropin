@@ -28,11 +28,7 @@ func Listen(laddr string) (net.Listener, error) {
 		make(chan net.Conn),
 	}
 	http.Handle("/", websocket.Handler(wss.wsHandler))
-	err = http.Serve(listener, nil)
-	if err != nil {
-		listener.Close()
-		return nil, err
-	}
+	go http.Serve(listener, nil)
 	return wss, nil
 }
 
